@@ -1,0 +1,33 @@
+.shiny-text {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.shiny-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.6) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.shiny-text:hover::before {
+  animation: shine 2.8s forwards;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
